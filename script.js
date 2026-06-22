@@ -12,17 +12,7 @@ const canvas = document.getElementById('captureCanvas');
 const resultsDiv = document.getElementById("results");
 var socket = io();
 
-// Kod ini secara automatik mengesan di mana aplikasi dibuka
-let BACKEND_URL;
-
-if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-    // Jika buka di laptop melalui VS Code/Localhost
-    BACKEND_URL = "http://localhost:5000";
-} else {
-    // Jika buka melalui GitHub Pages di telefon (URL awam)
-    // Gantikan dengan URL Render/Ngrok anda nanti
-    BACKEND_URL = "https://roadvision-api-anda.onrender.com";
-}
+const BACKEND_URL = "https://roadvision-ai-backend.onrender.com";
 
 let lastAlertTime = 0;
 let chartHistory = { labels: [], long: [], trans: [] };
