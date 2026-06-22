@@ -12,7 +12,7 @@ const canvas = document.getElementById('captureCanvas');
 const resultsDiv = document.getElementById("results");
 var socket = io();
 
-BACKEND_URL = "https://duh-phoenix-strike.ngrok-free.dev";
+const BACKEND_URL = "http://192.168.1.17:5000";
 
 let lastAlertTime = 0;
 let chartHistory = { labels: [], long: [], trans: [] };
