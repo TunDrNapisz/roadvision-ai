@@ -12,7 +12,19 @@ const canvas = document.getElementById('captureCanvas');
 const resultsDiv = document.getElementById("results");
 var socket = io();
 
-const BACKEND_URL = "https://roadvision-ai-backend.onrender.com";
+let BACKEND_URL;
+
+// Semak sama ada kita sedang membina (testing) di laptop
+if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    BACKEND_URL = "http://192.168.1.17:5000"; 
+} 
+// Jika diakses melalui domain GitHub Pages
+else {
+    BACKEND_URL = "https://roadvision-api-anda.onrender.com";
+}
+
+// TIPS: Tambahkan ini untuk debug
+console.log("Aplikasi menggunakan Backend URL:", BACKEND_URL);
 
 let lastAlertTime = 0;
 let chartHistory = { labels: [], long: [], trans: [] };
