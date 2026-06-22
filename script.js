@@ -156,7 +156,7 @@ const adminBarChart = new Chart(ctx, {
     }
 });
 
-async function fetchAndRefreshChart() {
+async function fetchAndRefreshChart() { 
     try {
         const response = await fetch('http://192.168.1.17:5000/api/get-live-data');
         const data = await response.json();
