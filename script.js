@@ -12,7 +12,7 @@ const canvas = document.getElementById('captureCanvas');
 const resultsDiv = document.getElementById("results");
 var socket = io();
 
-const BACKEND_URL = "http://192.168.1.17:5000";
+const BACKEND_URL = "http://192.168.0.111:5000";
 
 let lastAlertTime = 0;
 let chartHistory = { labels: [], long: [], trans: [] };
@@ -158,7 +158,7 @@ const adminBarChart = new Chart(ctx, {
 
 async function fetchAndRefreshChart() { 
     try {
-        const response = await fetch('http://192.168.1.17:5000/api/get-live-data');
+        const response = await fetch('http://192.168.0.111:5000/api/get-live-data');
         const data = await response.json();
 
         // Update graf dengan data yang baru anda dapat tadi
