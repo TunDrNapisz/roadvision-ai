@@ -12,7 +12,7 @@ const canvas = document.getElementById('captureCanvas');
 const resultsDiv = document.getElementById("results");
 var socket = io();
 
-const socket = io("http://192.168.1.12:5000");
+const BACKEND_URL = "http://192.168.1.12:5000";
 
 let lastAlertTime = 0;
 let chartHistory = { labels: [], long: [], trans: [] };
