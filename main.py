@@ -44,12 +44,11 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 executor = ThreadPoolExecutor(max_workers=3)
 
 
+@app.before_request
+def set_backend_url():
+    global BACKEND_URL
+    BACKEND_URL = request.host_url.rstrip('/')
 
-# # PADAM ATAU COMMENT BAHAGIAN INI
-# @app.before_request
-# def set_backend_url():
-#     global BACKEND_URL
-#     BACKEND_URL = request.host_url.rstrip('/')
 
 # Beritahu python untuk baca 'groq.env'
 load_dotenv(dotenv_path='groq.env')
