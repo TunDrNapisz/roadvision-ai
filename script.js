@@ -12,7 +12,6 @@ const canvas = document.getElementById('captureCanvas');
 const resultsDiv = document.getElementById("results");
 var socket = io();
 
-const BACKEND_URL = "http://192.168.1.12:5000";
 const socket = io("http://192.168.1.12:5000");
 
 let lastAlertTime = 0;
